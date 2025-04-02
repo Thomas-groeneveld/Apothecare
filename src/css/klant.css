@@ -1,122 +1,134 @@
+/* Algemene opmaak van de body */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e8f5e9;
-    text-align: center;
-    padding: 50px;
+    font-family: Arial, sans-serif; /* Standaard lettertype */
+    background-color: #e8f5e9; /* Achtergrondkleur van de pagina */
+    text-align: center; /* Centreer de tekst */
+    padding: 50px; /* Voeg padding toe rondom de inhoud */
 }
 
+/* Container voor inhoud */
 .container {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    display: inline-block;
-    width: 90%;
-    max-width: 900px;
-    text-align: left;
+    background: white; /* Witte achtergrond */
+    padding: 30px; /* Padding rondom de inhoud */
+    border-radius: 15px; /* Ronde hoeken */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Schaduw voor diepte */
+    display: inline-block; /* In-line blok zodat de container niet de hele breedte van het scherm gebruikt */
+    width: 90%; /* Breedte van 90% van het scherm */
+    max-width: 900px; /* Maximaal 900px breed */
+    text-align: left; /* Uitlijning van tekst naar links */
 }
 
+/* Opmaak van de hoofd titel */
 h1 {
-    color: #2e7d32;
-    text-align: center;
-    margin-bottom: 20px;
+    color: #2e7d32; /* Groene kleur voor de titel */
+    text-align: center; /* Centreer de titel */
+    margin-bottom: 20px; /* Voeg marge toe onder de titel */
 }
 
+/* Styling van knoppen */
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 250px;
-    margin: 15px auto;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(135deg, #4caf50, #2e7d32);
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: transform 0.2s, background 0.3s;
-    border: none;
-    cursor: pointer;
+    display: inline-flex; /* Flexbox voor het centreren van inhoud */
+    align-items: center; /* Verticaal centreren van de knopinhoud */
+    justify-content: center; /* Horizontaal centreren van de knopinhoud */
+    width: 100%; /* Maak de knop breed */
+    max-width: 250px; /* Maximaal 250px breed */
+    margin: 15px auto; /* Automatische marge aan de zijkanten */
+    padding: 15px; /* Padding rondom de tekst in de knop */
+    text-align: center; /* Centreer de tekst in de knop */
+    text-decoration: none; /* Verwijder onderstreping van de tekst */
+    color: white; /* Witte tekstkleur */
+    background: linear-gradient(135deg, #4caf50, #2e7d32); /* Groene verloop achtergrond */
+    border-radius: 8px; /* Ronde hoeken van de knop */
+    font-size: 16px; /* Standaard lettergrootte */
+    font-weight: bold; /* Vetgedrukte tekst */
+    transition: transform 0.2s, background 0.3s; /* Transitie-effecten voor hover */
+    border: none; /* Geen rand rond de knop */
+    cursor: pointer; /* Verander de cursor naar pointer bij hover */
 }
 
+/* Hover effect voor knoppen */
 .btn:hover {
-    background: linear-gradient(135deg, #2e7d32, #1b5e20);
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #2e7d32, #1b5e20); /* Donkerder groen bij hover */
+    transform: scale(1.05); /* Vergroot de knop iets bij hover */
 }
 
+/* Styling voor secties op de pagina */
 .section {
-    margin-top: 30px;
-    padding: 25px;
-    background-color: #f1f8e9;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px; /* Voeg marge toe boven de sectie */
+    padding: 25px; /* Voeg padding toe rondom de sectie */
+    background-color: #f1f8e9; /* Achtergrondkleur van de sectie */
+    border-radius: 12px; /* Ronde hoeken */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Schaduw voor diepte */
 }
 
+/* Opmaak van sub-titels */
 h2 {
-    color: #388e3c;
+    color: #388e3c; /* Groene kleur voor sub-titels */
 }
 
+/* Opmaak voor paragrafen */
 p {
-    font-size: 16px;
-    color: #4e4e4e;
+    font-size: 16px; /* Lettergrootte voor paragrafen */
+    color: #4e4e4e; /* Donkergrijze kleur voor tekst */
 }
 
-/* Bestellingen Lijst */
+/* Lijststijl voor bestellingen en winkelwagen */
 #orderList, #cartList {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 20px;
+    list-style-type: none; /* Verwijder de standaard lijststijl */
+    padding: 0; /* Verwijder padding */
+    margin-top: 20px; /* Voeg marge toe boven de lijst */
 }
 
+/* Opmaak voor items in de bestellingen of winkelwagen */
 #orderList li, #cartList li {
-    background-color: #f1f8e9;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #f1f8e9; /* Achtergrondkleur van lijstitems */
+    margin: 10px 0; /* Marga tussen lijstitems */
+    padding: 10px; /* Padding rondom elk item */
+    border-radius: 8px; /* Ronde hoeken van de lijstitems */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Schaduw voor diepte */
+    display: flex; /* Gebruik flexbox voor het uitlijnen van de inhoud */
+    justify-content: space-between; /* Verdeel de ruimte tussen de inhoud */
+    align-items: center; /* Verticaal centreren van de inhoud */
 }
 
-/* Verwijderknop */
+/* Styling voor de verwijderknop */
 .remove-btn {
-    background: #d32f2f;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
+    background: #d32f2f; /* Rode achtergrondkleur */
+    color: white; /* Witte tekstkleur */
+    border: none; /* Geen rand rond de knop */
+    padding: 5px 10px; /* Padding rondom de tekst in de knop */
+    border-radius: 5px; /* Ronde hoeken voor de knop */
+    cursor: pointer; /* Verander de cursor naar pointer bij hover */
 }
 
+/* Hover effect voor de verwijderknop */
 .remove-btn:hover {
-    background: #b71c1c;
+    background: #b71c1c; /* Donkerder rood bij hover */
 }
 
-/* Digitale Assistent */
+/* Digitale assistent (vast op de pagina) */
 #assistant-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
+    position: fixed; /* Positie vastzetten */
+    bottom: 20px; /* Zet het onderaan de pagina */
+    right: 20px; /* Zet het rechts op de pagina */
+    z-index: 1000; /* Zorg dat het boven andere elementen komt */
 }
 
+/* Styling van de assistentknop */
 #assistant-button {
-    width: 60px;
-    height: 60px;
-    background-color: #4caf50;
-    color: white;
-    font-size: 24px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
+    width: 60px; /* Breedte van de knop */
+    height: 60px; /* Hoogte van de knop */
+    background-color: #4caf50; /* Groene achtergrondkleur */
+    color: white; /* Witte tekstkleur */
+    font-size: 24px; /* Grote tekst voor het icoon */
+    border: none; /* Geen rand rond de knop */
+    border-radius: 50%; /* Maak de knop rond */
+    cursor: pointer; /* Verander de cursor naar pointer bij hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Schaduw voor diepte */
+    transition: transform 0.3s; /* Transitie-effect voor hover */
 }
 
+/* Hover effect voor de assistentknop */
 #assistant-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Vergroot de knop iets bij hover */
 }
