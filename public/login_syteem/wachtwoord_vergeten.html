@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <!-- Meta tags voor character encoding en responsive design -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link naar extern stylesheet -->
+    <link rel="stylesheet" href="../styles/login.css">
+    
+    <!-- Paginatitel die in browser tab wordt weergegeven -->
+    <title>Wachtwoord vergeten - Apothecare</title>
+</head>
+<body>
+    <!-- Formulier voor wachtwoord herstel - action moet nog worden ingevuld met server endpoint -->
+    <form action="#">
+        <!-- Hoofdcontainer voor formulier elementen -->
+        <div class="container">
+            <!-- Paginatitel -->
+            <h1>Wachtwoord vergeten</h1>
+            
+            <!-- Instructie tekst voor gebruikers -->
+            <p style="text-align: center; margin-bottom: 20px; color: #555;">
+                Vul je e-mailadres in en we sturen je een link om je wachtwoord te resetten.
+            </p>
+            
+            <!-- Label en inputveld voor e-mailadres -->
+            <label for="email"><b>E-mailadres</b></label>
+            <input type="email" placeholder="Voer je e-mailadres in" name="email" required>
+            
+            <!-- Submitknop om herstelverzoek te versturen -->
+            <button type="submit">Verstuur herstel-link</button>
+        </div>
+
+        <!-- Container voor navigatielinks -->
+        <div class="container">
+            <!-- Link om terug te keren naar inlogpagina -->
+            <span class="psw"><a href="login.html">Terug naar inloggen</a></span>
+        </div>
+    </form>
+</body>
+</html>

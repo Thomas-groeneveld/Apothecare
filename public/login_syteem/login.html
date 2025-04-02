@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <!-- Meta tags voor character encoding en responsive design -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link naar extern stylesheet voor consistente styling met andere authenticatie pagina's -->
+    <link rel="stylesheet" href="../styles/login.css">
+    
+    <!-- Paginatitel die in browser tab wordt weergegeven -->
+    <title>Login pagina</title>
+</head>
+<body>
+    <!-- Login formulier - action moet nog worden ingevuld met server endpoint -->
+    <form action="#">
+        <!-- Hoofdcontainer voor login formulier elementen -->
+        <div class="container">
+            <!-- Paginatitel -->
+            <h1>Login</h1>
+            
+            <!-- Veld voor gebruikersnaam -->
+            <label for="uname"><b>Gebruikersnaam</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <!-- Veld voor wachtwoord -->
+            <label for="psw"><b>Wachtwoord</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <!-- Submitknop om het loginformulier te verzenden -->
+            <button type="submit">Login</button>
+        </div>
+
+        <!-- Container voor navigatielinks -->
+        <div class="container">
+            <!-- Link naar wachtwoord vergeten pagina -->
+            <span class="psw"><a href="wachtwoord_vergeten.html">Wachtwoord vergeten?</a></span> <br>
+            <!-- Link naar registratiepagina voor nieuwe gebruikers -->
+            <span class="psw"><a href="registreren.html">Nieuw account maken</a></span>
+        </div>
+    </form>
+</body>
+</html>

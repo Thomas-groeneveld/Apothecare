@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <!-- Meta tags voor character encoding en responsive design -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link naar extern stylesheet dat gedeeld wordt met andere authenticatie pagina's -->
+    <link rel="stylesheet" href="../styles/login.css">
+
+    <!-- Paginatitel die in browser tab wordt weergegeven -->
+    <title>Registreren - Apothecare</title>
+</head>
+<body>
+    <!-- Registratieformulier - action moet nog worden ingevuld met server endpoint -->
+    <form action="#">
+        <!-- Hoofdcontainer voor formulier elementen -->
+        <div class="container">
+            <!-- Paginatitel -->
+            <h1>Account aanmaken</h1>
+            
+            <!-- Flexbox rij voor naast elkaar geplaatste velden (voornaam en achternaam) -->
+            <div class="form-row">
+                <!-- Linker kolom voor voornaam -->
+                <div>
+                    <label for="voornaam"><b>Voornaam</b></label>
+                    <input type="text" placeholder="Voer voornaam in" name="voornaam" required>
+                </div>
+                <!-- Rechter kolom voor achternaam -->
+                <div>
+                    <label for="achternaam"><b>Achternaam</b></label>
+                    <input type="text" placeholder="Voer achternaam in" name="achternaam" required>
+                </div>
+            </div>
+            
+            <!-- Veld voor e-mailadres -->
+            <label for="email"><b>E-mailadres</b></label>
+            <input type="email" placeholder="Voer e-mailadres in" name="email" required>
+            
+            <!-- Veld voor gebruikersnaam -->
+            <label for="gebruikersnaam"><b>Gebruikersnaam</b></label>
+            <input type="text" placeholder="Voer gebruikersnaam in" name="gebruikersnaam" required>
+
+            <!-- Veld voor wachtwoord -->
+            <label for="psw"><b>Wachtwoord</b></label>
+            <input type="password" placeholder="Voer wachtwoord in" name="psw" required>
+            
+            <!-- Veld voor wachtwoord bevestiging -->
+            <label for="psw-repeat"><b>Bevestig wachtwoord</b></label>
+            <input type="password" placeholder="Bevestig wachtwoord" name="psw-repeat" required>
+            
+            <!-- Submitknop om het registratieformulier te verzenden -->
+            <button type="submit">Registreren</button>
+        </div>
+
+        <!-- Container voor navigatielinks -->
+        <div class="container">
+            <!-- Link om terug te keren naar inlogpagina voor bestaande gebruikers -->
+            <span class="psw">Heb je al een account? <a href="login.html">Inloggen</a></span>
+        </div>
+    </form>
+</body>
+</html>

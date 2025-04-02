@@ -1,0 +1,116 @@
+/* Reset standaard browser styling voor consistente weergave */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Achtergrond styling voor de pagina met gradient effect */
+body {
+  background-color: #f0f7f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Volledige viewport hoogte */
+  background-image: linear-gradient(135deg, #f0f7f4 0%, #e0efe5 100%); /* Groen gradient effect */
+}
+
+/* Styling voor de formulier container */
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px; /* Afgeronde hoeken */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtiele schaduw effect */
+  width: 400px;
+  max-width: 90%; /* Responsive width voor kleinere schermen */
+}
+
+/* Styling voor de hoofdtitel */
+h1 {
+  text-align: center;
+  color: #2e8b57; /* Sea Green kleur */
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Styling voor form labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Basis styling voor alle tekst en email input velden */
+input[type="email"], input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s; /* Soepele overgang bij hover/focus */
+}
+
+/* Focus effect voor input velden wanneer ze actief zijn */
+input[type="text"]:focus, input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #3cb371; /* Medium Sea Green kleur */
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(20, 28, 23, 0.2); /* Subtiele glow effect */
+}
+
+/* Styling voor buttons */
+button {
+  background-color: #2e8b57; /* Sea Green kleur */
+  color: white;
+  border: none;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s; /* Soepele overgang bij hover */
+}
+
+/* Hover effect voor buttons */
+button:hover {
+  background-color: #228b22; /* Forest Green kleur, iets donkerder */
+}
+
+/* Aangepaste styling voor de tweede container (voor links) */
+.container:nth-child(2) {
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* Styling voor links in de password sectie */
+.psw a {
+  color: #2e8b57; /* Sea Green kleur */
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s; /* Soepele overgang bij hover */
+}
+
+/* Hover effect voor links */
+.psw a:hover {
+  color: #228b22; /* Forest Green kleur, iets donkerder */
+  text-decoration: underline;
+}
+
+/* Flexbox rij voor naast elkaar geplaatste velden (zoals voornaam/achternaam) */
+.form-row {
+  display: flex;
+  gap: 20px; /* Ruimte tussen de kolommen */
+  margin-bottom: 0;
+}
+
+/* Elke kolom in een form-row neemt evenveel ruimte in */
+.form-row > div {
+  flex: 1;
+}
