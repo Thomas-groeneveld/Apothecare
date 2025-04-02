@@ -10,7 +10,7 @@ body {
 header {
     background-color: #4CAF50;
     color: white;
-    padding: 1rem;
+    padding: 2rem 1rem; /* Increased padding for more height */
     display: flex;
     align-items: center;
     justify-content: center; /* Center the title */
@@ -36,7 +36,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     background-color: #4CAF50;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1rem; /* Increased padding for more height */
     position: relative;
 }
 
@@ -60,12 +60,16 @@ nav .nav-links a:hover {
 
 /* Logout Button */
 nav .logout-button {
+    margin-left: auto; /* Push the logout button to the far right */
     background-color: #f44336;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    position: absolute;
+    right: 1rem; /* Align the logout button to the right */
+    top: -15px;
 }
 
 nav .logout-button:hover {
