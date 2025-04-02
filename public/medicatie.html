@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voorraad Overzicht</title>
-    <link rel="stylesheet" href="/src/css/voorraad.css">
+    <title>Medicatie Overzicht</title>
+    <link rel="stylesheet" href="/src/css/medicatie.css">
 </head>
 <body>
     <header>
         <div class="header-content">
             <img src="/src/assets/logo1.png" alt="Logo" class="logo">
-            <h1>Voorraad Overzicht</h1>
+            <h1>Medicatie Overzicht</h1>
         </div>
     </header>
     <nav>
@@ -23,60 +23,46 @@
         <a href="#logout" class="logout-button">Uitloggen</a>
     </nav>
     <main>
-        <section class="stock-table">
+        <section class="medication-list">
             <h2>Beschikbare Medicatie</h2>
             <table>
                 <thead>
                     <tr>
                         <th>Medicatie Naam</th>
+                        <th>Beschrijving</th>
                         <th>Prijs (in €)</th>
-                        <th>Beschikbare Voorraad</th>
-                        <th>Minimale Voorraad</th>
-                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Paracetamol</td>
+                        <td>Pijnstillend en koortsverlagend.</td>
                         <td>5</td>
-                        <td>150</td>
-                        <td>50</td>
-                        <td style="color: green;">Op voorraad</td>
                     </tr>
                     <tr>
                         <td>Ibuprofen</td>
+                        <td>Ontstekingsremmend en pijnstillend.</td>
                         <td>7</td>
-                        <td>20</td>
-                        <td>50</td>
-                        <td style="color: orange;">Lading onderweg</td>
                     </tr>
                     <tr>
                         <td>Amoxicilline</td>
+                        <td>Antibioticum voor bacteriële infecties.</td>
                         <td>15</td>
-                        <td>60</td>
-                        <td>30</td>
-                        <td style="color: green;">Op voorraad</td>
                     </tr>
                     <tr>
                         <td>Aspirine</td>
+                        <td>Pijnstillend, koortsverlagend en bloedverdunnend.</td>
                         <td>6</td>
-                        <td>7</td>
-                        <td>2</td>
-                        <td style="color: black;">Tijdelijk minder beschikbaar</td>
                     </tr>
                     <tr>
                         <td>Codeïne</td>
+                        <td>Onderdrukt hoest en verlicht pijn.</td>
                         <td>12</td>
-                        <td>40</td>
-                        <td>20</td>
-                        <td style="color: green;">Op voorraad</td>
                     </tr>
                     <tr>
                         <td>Metformine</td>
+                        <td>Medicatie voor diabetes type 2.</td>
                         <td>8</td>
-                        <td>8</td>
-                        <td>15</td>
-                        <td style="color: red;">Bijvullen nodig</td>
                     </tr>
                 </tbody>
             </table>

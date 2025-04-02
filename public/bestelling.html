@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klanten Bestellingen</title>
+    <link rel="stylesheet" href="/src/css/bestelling.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="/src/assets/logo1.png" alt="Logo" class="logo">
+            <h1>Klanten Bestellingen</h1>
+        </div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="/public/personeel.html">Homepage</a>
+            <a href="/public/medicatie.html">Medicatie</a>
+            <a href="/public/voorraad.html">Voorraad</a>
+            <a href="/public/bestelling.html">Bestellingen</a>
+        </div>
+        <a href="#logout" class="logout-button">Uitloggen</a>
+    </nav>
+    <main>
+        <section class="order-table">
+            <h2>Overzicht van Klanten Bestellingen</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bestelling ID</th>
+                        <th>Klant Naam</th>
+                        <th>Medicatie</th>
+                        <th>Aantal</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="order-data">
+                    <!-- Orders will be dynamically loaded here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Apothecare. Alle rechten voorbehouden.</p>
+    </footer>
+    <script src="/src/js/bestelling.js"></script>
+</body>
+</html>
