@@ -126,6 +126,37 @@
       </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Wat Klanten Zeggen</span>
+          <h2>Klantervaringen</h2>
+          <div class="separator"></div>
+        </div>
+        <div class="testimonials-slider">
+          <div class="testimonial-card" v-for="(testimonial, index) in testimonials" :key="index">
+            <div class="testimonial-content">
+              <div class="quote">
+                <font-awesome-icon :icon="['fas', 'quote-left']" />
+              </div>
+              <p>{{ testimonial.text }}</p>
+              <div class="testimonial-rating">
+                <font-awesome-icon :icon="['fas', 'star']" v-for="star in 5" :key="star" />
+              </div>
+            </div>
+            <div class="testimonial-author">
+              <img :src="testimonial.image" :alt="testimonial.name">
+              <div class="author-info">
+                <h4>{{ testimonial.name }}</h4>
+                <p>{{ testimonial.role }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Products Section -->
     <section id="products-preview" class="products-preview">
       <div class="container">
@@ -135,49 +166,15 @@
           <div class="separator"></div>
         </div>
         <div class="product-slider">
-          <div class="product-card">
-            <div class="product-badge">Nieuw</div>
+          <div class="product-card" v-for="product in featuredProducts" :key="product.id">
+            <div class="product-badge" v-if="product.badge">{{ product.badge }}</div>
             <div class="product-image">
-              <img src="@/assets/products/product1.jpg" alt="Product 1">
+              <img :src="product.image" :alt="product.name">
             </div>
             <div class="product-details">
-              <h3>Immuunsysteem Complex</h3>
-              <p>Complete vitamine- en mineralensupplement</p>
-              <div class="product-price">€24,99</div>
-              <router-link to="/products" class="btn primary">Bekijk Details</router-link>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-image">
-              <img src="@/assets/products/product2.jpg" alt="Product 2">
-            </div>
-            <div class="product-details">
-              <h3>Geavanceerde Pijnverlichting</h3>
-              <p>Snelwerkende formule voor pijnbestrijding</p>
-              <div class="product-price">€12,99</div>
-              <router-link to="/products" class="btn primary">Bekijk Details</router-link>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-badge">Populair</div>
-            <div class="product-image">
-              <img src="@/assets/products/product3.jpg" alt="Product 3">
-            </div>
-            <div class="product-details">
-              <h3>Slaap & Ontspanning</h3>
-              <p>Natuurlijke formule voor betere slaapkwaliteit</p>
-              <div class="product-price">€18,99</div>
-              <router-link to="/products" class="btn primary">Bekijk Details</router-link>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-image">
-              <img src="@/assets/products/product4.jpg" alt="Product 4">
-            </div>
-            <div class="product-details">
-              <h3>Complete EHBO-kit</h3>
-              <p>Essentiële benodigdheden voor noodgevallen</p>
-              <div class="product-price">€34,99</div>
+              <h3>{{ product.name }}</h3>
+              <p>{{ product.description }}</p>
+              <div class="product-price">{{ product.price }}</div>
               <router-link to="/products" class="btn primary">Bekijk Details</router-link>
             </div>
           </div>
@@ -204,12 +201,140 @@
 <script>
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { ProductService, TestimonialService } from '@/services/api';
 
 export default {
   name: 'HomePage',
   components: {
     DefaultLayout,
     FontAwesomeIcon
+  },
+  data() {
+    return {
+      testimonials: [],
+      featuredProducts: [],
+      loading: {
+        testimonials: true,
+        products: true
+      },
+      error: {
+        testimonials: null,
+        products: null
+      }
+    }
+  },
+  created() {
+    // Fetch data when component is created
+    this.fetchTestimonials();
+    this.fetchFeaturedProducts();
+  },
+  methods: {
+    async fetchTestimonials() {
+      try {
+        this.testimonials = await TestimonialService.getTestimonials();
+        this.loading.testimonials = false;
+      } catch (err) {
+        console.error('Error loading testimonials:', err);
+        this.error.testimonials = 'Kon getuigenissen niet laden';
+        this.loading.testimonials = false;
+      }
+    },
+    
+    async fetchFeaturedProducts() {
+      try {
+        this.featuredProducts = await ProductService.getFeaturedProducts();
+        this.loading.products = false;
+      } catch (err) {
+        console.error('Error loading featured products:', err);
+        this.error.products = 'Kon uitgelichte producten niet laden';
+        this.loading.products = false;
+      }
+    }
   }
 }
 </script>
+
+<style>
+/* Testimonials Section Styling */
+.testimonials {
+  background-color: var(--bg-light);
+  position: relative;
+}
+
+.testimonials-slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+}
+
+.testimonial-content {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.quote {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  opacity: 0.5;
+  margin-bottom: 15px;
+}
+
+.testimonial-content p {
+  color: var(--text-light);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.testimonial-rating {
+  color: #f49e4c;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 20px;
+}
+
+.testimonial-author img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.author-info h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: var(--primary-dark);
+}
+
+.author-info p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+  .testimonials-slider {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+</style>

@@ -18,7 +18,7 @@
       </nav>
       <div class="auth-buttons">
         <router-link to="/login" class="login-btn">Inloggen</router-link>
-        <router-link to="/register" class="register-btn">Registreren</router-link>
+        <router-link to="/registreren" class="register-btn">Registreren</router-link>
       </div>
     </div>
   </header>

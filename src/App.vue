@@ -16,4 +16,5 @@ export default {
 @import './styles/components/header.css';
 @import './styles/components/footer.css';
 @import './styles/pages/common.css';
+@import './styles/pages/auth.css';
 </style>

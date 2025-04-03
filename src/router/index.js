@@ -33,9 +33,14 @@ const routes = [
     component: () => import('@/pages/LoginPage.vue') // Lazy loading
   },
   {
-    path: '/register',
+    path: '/registreren',
     name: 'Register',
     component: () => import('@/pages/RegisterPage.vue') // Lazy loading
+  },
+  {
+    path: '/wachtwoord-vergeten',
+    name: 'ForgotPassword',
+    component: () => import('@/pages/ForgotPasswordPage.vue') // Lazy loading
   }
 ]
 
