@@ -33,8 +33,10 @@
 
         <!-- Container voor navigatielinks -->
         <div class="auth-links">
+          <!-- Link naar personeelspagina (dashboard) - tijdelijk voor gemakkelijke navigatie -->
+          <span class="psw"><router-link to="/dashboard">Ga naar Personeelspagina</router-link></span><br>
           <!-- Link naar wachtwoord vergeten pagina -->
-          <span class="psw"><router-link to="/wachtwoord-vergeten">Wachtwoord vergeten?</router-link></span> <br>
+          <span class="psw"><router-link to="/wachtwoord-vergeten">Wachtwoord vergeten?</router-link></span><br>
           <!-- Link naar registratiepagina voor nieuwe gebruikers -->
           <span class="psw"><router-link to="/registreren">Nieuw account maken</router-link></span>
         </div>
@@ -61,8 +63,13 @@ export default {
     handleLogin() {
       // Implementeer hier je inlog logica
       console.log('Inloggen met:', this.username, this.password);
-      alert(`Inlogverzoek voor ${this.username} ontvangen.`);
-      // Hier zou je normaal een API-aanroep doen
+      
+      // Redirect to dashboard (in a real app, this would only happen after successful login)
+      if (this.username && this.password) {
+        this.$router.push('/dashboard');
+      } else {
+        alert(`Vul alle verplichte velden in.`);
+      }
     }
   }
 }

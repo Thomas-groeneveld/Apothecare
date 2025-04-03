@@ -41,6 +41,31 @@ const routes = [
     path: '/wachtwoord-vergeten',
     name: 'ForgotPassword',
     component: () => import('@/pages/ForgotPasswordPage.vue') // Lazy loading
+  },
+  // Dashboard routes
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: () => import('@/pages/dashboard/DashboardHome.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/dashboard/medicatie',
+    name: 'Medicatie',
+    component: () => import('@/pages/dashboard/MedicatiePage.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/dashboard/voorraad',
+    name: 'Voorraad',
+    component: () => import('@/pages/dashboard/VoorraadPage.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/dashboard/bestellingen',
+    name: 'Bestellingen',
+    component: () => import('@/pages/dashboard/BestellingenPage.vue'),
+    meta: { requiresAuth: true }
   }
 ]
 
@@ -56,5 +81,20 @@ const router = createRouter({
     }
   }
 })
+
+// Navigation guard (for future authentication implementation)
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  
+  // In a real application, check if user is authenticated
+  // const isAuthenticated = localStorage.getItem('user-token') !== null;
+  const isAuthenticated = true; // For now, always allow access to dashboard
+  
+  if (requiresAuth && !isAuthenticated) {
+    next('/login');
+  } else {
+    next();
+  }
+});
 
 export default router
