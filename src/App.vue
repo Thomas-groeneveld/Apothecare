@@ -17,5 +17,6 @@ export default {
 @import './styles/components/footer.css';
 @import './styles/pages/common.css';
 @import './styles/pages/auth.css';
-@import './styles/dashboard.css'; /* Added dashboard CSS */
+@import './styles/dashboard.css';
+@import './styles/admin.css';
 </style>

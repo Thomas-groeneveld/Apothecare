@@ -66,6 +66,30 @@ const routes = [
     name: 'Bestellingen',
     component: () => import('@/pages/dashboard/BestellingenPage.vue'),
     meta: { requiresAuth: true }
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: () => import('@/pages/admin/AdminPage.vue'),
+    meta: { requiresAuth: true, requiresAdmin: true }
+  },
+  {
+    path: '/admin/products',
+    name: 'ProductManagement',
+    component: () => import('@/pages/admin/ProductManagementPage.vue'),
+    meta: { requiresAuth: true, requiresAdmin: true }
+  },
+  {
+    path: '/admin/orders',
+    name: 'OrderManagement',
+    component: () => import('@/pages/admin/OrderManagementPage.vue'),
+    meta: { requiresAuth: true, requiresAdmin: true }
+  },
+  {
+    path: '/admin/restock',
+    name: 'RestockManagement',
+    component: () => import('@/pages/admin/RestockManagementPage.vue'),
+    meta: { requiresAuth: true, requiresAdmin: true }
   }
 ]
 
@@ -85,13 +109,16 @@ const router = createRouter({
 // Navigation guard (for future authentication implementation)
 router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  const requiresAdmin = to.matched.some(record => record.meta.requiresAdmin);
   
-  // In a real application, check if user is authenticated
-  // const isAuthenticated = localStorage.getItem('user-token') !== null;
-  const isAuthenticated = true; // For now, always allow access to dashboard
+  // In a real application, these should check your authentication system
+  const isAuthenticated = true; // Replace with real auth check
+  const isAdmin = true; // Replace with real admin check
   
   if (requiresAuth && !isAuthenticated) {
     next('/login');
+  } else if (requiresAdmin && !isAdmin) {
+    next('/dashboard'); // Redirect non-admins to regular dashboard
   } else {
     next();
   }
