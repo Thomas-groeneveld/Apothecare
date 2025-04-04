@@ -259,12 +259,16 @@ export default {
 .testimonials {
   background-color: var(--bg-light);
   position: relative;
+  padding: 80px 0;
 }
 
 .testimonials-slider {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .testimonial-card {
@@ -273,6 +277,9 @@ export default {
   padding: 30px;
   box-shadow: var(--box-shadow);
   transition: var(--transition);
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
 }
 
 .testimonial-card:hover {
@@ -306,6 +313,7 @@ export default {
 .testimonial-author {
   display: flex;
   align-items: center;
+  justify-content: center;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   padding-top: 20px;
 }
@@ -316,6 +324,10 @@ export default {
   border-radius: 50%;
   object-fit: cover;
   margin-right: 15px;
+}
+
+.author-info {
+  text-align: left;
 }
 
 .author-info h4 {
